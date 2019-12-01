@@ -6,5 +6,5 @@ The model Uses Pretrained Embedding model to train the data.
 IMDB reviews= Datasets to Train the model.
 
 my_model.h5 - Trained model.
-app.py - webapp , sents the movie name tyoed by user and fethches results to display Piechart.
+app.py - webapp , sents the movie name tyoed by user and fetches results to display Piechart.
 part1.py main Program to Predict Scores.
