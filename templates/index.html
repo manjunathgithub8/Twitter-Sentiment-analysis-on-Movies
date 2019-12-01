@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Movie Analysis</title>
+{% endblock %}
+
+{% block body %}
+<div style="background-image: url('..\\wall.jpg');">
+
+
+<div class="content">
+  <h1 style="text-align: center">Movie Analysis</h1>
+  <div class="form">
+      <form action="/" method="POST">
+          <input type="text" name="content" id="content">
+          <input type="submit" value="Add Task">
+      </form>
+  </div>
+
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center">Enter the movie name!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th> Movie </th>
+            <th>Overall Rating</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{task.rating}}</td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+
+                    <a href="/chart/{{task.id}}">Pie chart</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}
